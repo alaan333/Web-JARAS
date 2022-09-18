@@ -1,0 +1,234 @@
+@import url(fuentes.css);
+
+* {margin: 0px;       /*margen externo de los contenedores mas grandes*/ 
+    padding: 0px;     /*margen interno*/
+    box-sizing: border-box;    /*para que las cajas no se desborden unas con otras*/
+}
+a{
+    text-decoration: none;
+}
+.padre{
+    display: flex;                  
+    flex-flow: column nowrap;    /*para que todo se adapte al tamaño establecido*/
+}
+.margen-interno{
+    padding: 0 50px;
+}
+    header {
+        background: violet;
+        background-position: center;
+        background-attachment: contain;
+        background-size: cover;
+        display: flex;                      /*siempre hay que agregarlo para despues poder trabajar con flexbox*/
+        flex-flow: column nowrap;           /*siempre hay que agregarlo para despues poder trabajar con flexbox*/
+    }
+        .menu-logo-nav-social{
+            background-color:  rgba(255,193,178);
+            /* background-color: rgba(0,0,0,.2); */
+            display: flex;
+            flex-flow: row nowrap;        /*para que se configure como fila*/
+            height: 90px;                /*altura del contenedor*/
+            align-items: center;          /*para que el contenido del contenedor quede en el centro*/
+            border-bottom: 1px solid white;
+        }
+            .logo{
+                flex: 1 1 auto;                 /*para el largo que queremos que ocupe*/    
+                padding: 0px;
+            }
+                .logojaras{
+                    height: 80px;
+                    margin: 0%;
+                    padding: 0px;
+                }
+            .nav{
+                flex: 4 1 auto;                 /*para el largo que queremos que ocupe*/
+            }
+                .nav a{
+                    color: white;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    padding: 10px 10px;
+                    letter-spacing: 2px;     /*para separar la letras*/
+                }
+                .nav a:hover{
+                    color: black;
+                    background-color: rgba(255, 143, 176,.4);
+                    border-radius: 40px;
+                }
+            .social{ 
+                flex: 1 1 auto;                  /*para el largo que queremos que ocupe*/
+                display: flex;
+                color: white;
+                justify-content: center;
+            }
+                .social p{
+                    margin-right: 10px;
+                    font-family: aboreto;
+                }
+                .social a{
+                    font-size: 15px;
+                    margin: 5px;
+                    padding-left:15px; 
+                    color: white;
+                }
+                .iconoface:hover{
+                    color: rgb(4, 0, 255);
+                }
+                .iconoinsta:hover{
+                    color: tomato;
+                }
+        .texto-principal{
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            font-family: aboreto;    
+            font-size: 50px;      /*tamaño letra*/
+            color: olive;
+            font-weight: 300;      /*anchura de la letra*/
+            text-align: center;
+            line-height: 1.6;          /*altura de la letra*/
+            /* background-color: rgba(255, 255, 255, 0.1); */
+            padding: 100px;
+            /* border: 1px solid white; */
+            border-radius: 80px;
+        }
+    section{
+        background-color:violet;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+        .articulos{
+            background-color:violet;       /*debe ser del mismo color que el aside*/
+            flex: 3 1 auto;
+            display: flex;
+            flex-flow: row wrap;                     /*wrap para que el contenido se adapte al este contenedor*/
+        }
+            article{
+                flex: 1 1 40%;                      /*40% para que ocupe ese porcentaje del contenedor*/
+                color: black;
+                font-size: 13px;
+                letter-spacing: 1px;
+                margin: 10px 10px 0 0;
+                flex: 1 1 45%;
+                background-color: violet;
+            }
+                article a{
+                    padding: 10px;
+                    background-color: rgba(0, 0, 0,.9);
+                    color: white;
+                    font-size: 13px;
+                    margin: 10px 0;
+                    display: inline-block;
+                }
+                article a:hover{
+                    background-color: rgba(255, 6, 172,.4);
+                    color: black;
+                }
+                article img{
+                    width: 100%
+                }
+                h3{
+                    background-color: #F806CC;
+                }
+            .primero-ultimo{
+                background-color: black;
+                margin: 10px 0 10px 0;
+                flex: 1 1 100%;                    /*100% para que ocupe el total del contenedor*/
+                margin: 10px 10px 10px 0;
+            }
+                .primero-ultimo a{
+                    color: white;
+                    margin-inline: 4px;
+                }
+        aside{
+            background-color: violet;   /*debe ser del mismo color que articulos*/
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column; 
+            margin: 10px 5px 10px 0;
+        }
+            .publicidad{  
+                margin-bottom: 10px;         
+            }
+            .publicidad img{
+                width: 100%;
+            }
+            h4{
+                background-color: black;
+                color: white;
+                padding: 10px;
+                text-transform: uppercase;
+            }
+    footer{
+        background-color: black;
+        display: flex;
+        justify-content: right;
+    }
+        .pie{
+            text-align: center;
+        }
+            .pie a{
+                color: white;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+
+@media all and (max-width: 970px){
+    .social{
+        margin: 10px;
+    }
+    section{
+        flex-direction: column;
+    }
+        aside{
+            flex-flow: row wrap;
+        }
+            .publicidad{
+                flex: 1 1 20%;
+                margin: 10px;
+            }
+    .menu-logo-nav-social{
+        flex-direction: column;
+        height: auto;
+    }
+    h1{
+        font-size: 90px;
+    }
+    @media all and (max-width: 850px){
+        h1{
+            font-size: 50px;
+        }
+    }
+
+}     
+@media all and (max-width: 620px){
+    .articulos{
+        flex-direction: column;
+    }
+    aside{
+        flex-direction: column;
+    }
+    h1{
+        font-size: 30px;
+    }
+    .off{
+        display: none;
+    }
+    .nav{
+        margin: 10px;
+    }
+    .nav a{
+        font-size: 20px;
+    }
+
+}  
+
+@media all and (max-width: 400px){
+    aside{
+        flex-flow: column nowrap;
+    }
+}  
+
